@@ -4,6 +4,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+with open("designing.css") as source_des:
+        st.markdown(f'<style>{source_des.read()}</style>', unsafe_allow_html=True)
 df = pd.read_csv("mxmh_survey_results.csv")
 
 df.drop(['Timestamp', 'Permissions'], axis=1, inplace=True)
